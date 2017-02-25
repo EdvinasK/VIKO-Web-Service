@@ -1,6 +1,7 @@
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+var soap = require('soap');
 var db = require('./db');
 
 
