@@ -1,0 +1,29 @@
+{
+  "name": "Web services project.",
+  "version": "0.0.1",
+  "description": "Web services project.",
+  "keywords": [
+    "web services",
+    "express",
+    "passport",
+    "soap"
+  ],
+  "author": "Edvinas.K",
+  "license": "Studentyish",
+  "homepage": "https://github.com/EdvinasK/Web-Services",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EdvinasK/Web-Services"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.3.5",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "morgan": "^1.6.1",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+<% if (!user) { %>
+	<p>Welcome to VIKO lounge! Please <a href="/login">log in</a>.</p>
+<% } else { %>
+	<h1>You are logged in.</h1>
+	<p>Hello, <%= user.username %>.</p>
+	<p>We will be coming back shortly with a role update. Please check frequently!</p>
+<% } %>
