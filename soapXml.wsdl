@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="login"
+    targetNamespace="http://localhost:8000/login"
+    xmlns="http://localhost:8000/login"
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <wsdl:message name="loginRequest">
+    	<wsdl:part name="email" type="xs:string"/>
+    	<wsdl:part name="password" type="xs:string"/>
+    </wsdl:message>
+
+    <wsdl:message name="loginResponse">
+    	<wsdl:part name="loginStatus"/>
+    </wsdl:message>
+
+    <wsdl:portType name="loginPortType">
+    	<wsdl:operation name="login">
+    		<wsdl:input message="loginRequest"/>
+    		<wsdl:output message="loginResponse"/>
+    	</wsdl:operation> 
+    </wsdl:portType>
+
+    <wsdl:binding name="loginSoapBinding" type="loginPortType">
+    	<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+    	<wsdl:operation name="login">
+    		<soap:operation soapAction="login"/>
+    		<wsdl:input>
+    			<soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+    		</wsdl:input>
+    	</wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="LoginService">
+    	<wsdl:port binding="loginSoapBinding" name="loginPort">
+    		<soap:address location="http://localhost:3000/login"/>
+    	</wsdl:port>
+    </wsdl:service>
